@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Theme Palette */
+  --color-primary: #0f172a;
+  --color-accent: #3b82f6;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-border: #e2e8f0;
+  --color-bg-base: #f1f5f9;
+  --color-bg-alt: #f8fafc;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-800 bg-bg-base;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md transition-all font-semibold text-[13px] border-none cursor-pointer inline-flex items-center justify-center gap-2;
+  }
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-blue-600 active:scale-95 shadow-sm;
+  }
+  .btn-outline {
+    @apply bg-transparent border border-border text-slate-600 hover:bg-slate-100;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-slate-400 hover:text-white hover:bg-white/10;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
